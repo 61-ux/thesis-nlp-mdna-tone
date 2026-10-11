@@ -1,0 +1,87 @@
+
+===== 模型1（仅Tone） =====
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    ROA   R-squared:                       0.613
+Model:                            OLS   Adj. R-squared:                  0.611
+Method:                 Least Squares   F-statistic:                     240.8
+Date:                Sun, 11 Oct 2026   Prob (F-statistic):           1.71e-22
+Time:                        13:39:17   Log-Likelihood:                 483.95
+No. Observations:                 180   AIC:                            -963.9
+Df Residuals:                     178   BIC:                            -957.5
+Df Model:                           1                                         
+Covariance Type:              cluster                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      0.0722      0.001     51.655      0.000       0.069       0.075
+Tone           0.1044      0.007     15.518      0.000       0.091       0.118
+==============================================================================
+Omnibus:                        0.438   Durbin-Watson:                   1.801
+Prob(Omnibus):                  0.803   Jarque-Bera (JB):                0.544
+Skew:                          -0.109   Prob(JB):                        0.762
+Kurtosis:                       2.841   Cond. No.                         5.04
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+===== 模型2（+控制变量） =====
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    ROA   R-squared:                       0.620
+Model:                            OLS   Adj. R-squared:                  0.614
+Method:                 Least Squares   F-statistic:                     88.34
+Date:                Sun, 11 Oct 2026   Prob (F-statistic):           8.50e-22
+Time:                        13:39:17   Log-Likelihood:                 485.53
+No. Observations:                 180   AIC:                            -963.1
+Df Residuals:                     176   BIC:                            -950.3
+Df Model:                           3                                         
+Covariance Type:              cluster                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      0.0651      0.026      2.478      0.013       0.014       0.117
+Tone           0.1048      0.007     15.770      0.000       0.092       0.118
+企业规模           0.0011      0.002      0.553      0.580      -0.003       0.005
+资产负债率         -0.0161      0.009     -1.798      0.072      -0.034       0.001
+==============================================================================
+Omnibus:                        0.494   Durbin-Watson:                   1.835
+Prob(Omnibus):                  0.781   Jarque-Bera (JB):                0.636
+Skew:                          -0.063   Prob(JB):                        0.728
+Kurtosis:                       2.737   Cond. No.                         306.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
+
+===== 模型3（+年度固定效应） =====
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    ROA   R-squared:                       0.637
+Model:                            OLS   Adj. R-squared:                  0.626
+Method:                 Least Squares   F-statistic:                     53.67
+Date:                Sun, 11 Oct 2026   Prob (F-statistic):           1.08e-20
+Time:                        13:39:17   Log-Likelihood:                 489.53
+No. Observations:                 180   AIC:                            -967.1
+Df Residuals:                     174   BIC:                            -947.9
+Df Model:                           5                                         
+Covariance Type:              cluster                                         
+=================================================================================
+                    coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------
+Intercept         0.0609      0.024      2.502      0.012       0.013       0.109
+C(年份)[T.2022]     0.0084      0.003      3.158      0.002       0.003       0.014
+C(年份)[T.2023]     0.0049      0.003      1.758      0.079      -0.001       0.010
+Tone              0.1060      0.007     15.643      0.000       0.093       0.119
+企业规模              0.0012      0.002      0.662      0.508      -0.002       0.005
+资产负债率            -0.0199      0.009     -2.139      0.032      -0.038      -0.002
+==============================================================================
+Omnibus:                        0.251   Durbin-Watson:                   1.799
+Prob(Omnibus):                  0.882   Jarque-Bera (JB):                0.332
+Skew:                          -0.086   Prob(JB):                        0.847
+Kurtosis:                       2.879   Cond. No.                         306.
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (cluster)
